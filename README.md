@@ -1,36 +1,131 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PlaceList - AI 기반 맞춤 공간 추천 서비스
 
-## Getting Started
+PlaceList는 ChatGPT의 지도 버전으로, 사용자의 취향, 상황, 맥락을 이해하여 개인화된 공간을 추천하는 AI 기반 지도 서비스입니다.
 
-First, run the development server:
+## 주요 기능
+
+- 🤖 **AI 기반 개인화**: 사용자의 취향과 상황을 학습하여 정확한 추천
+- 🌍 **다국어 지원**: 한국어, 일본어, 영어 지원
+- 📧 **자동 이메일 알림**: 미팅 신청 시 lia@hautrip.com으로 자동 알림
+- 📊 **Google Sheets 연동**: 모든 신청 데이터가 자동으로 스프레드시트에 저장
+- 📱 **반응형 디자인**: 모바일과 데스크톱에서 최적화된 경험
+
+## 기술 스택
+
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **이메일**: Nodemailer + Gmail
+- **데이터 저장**: Google Sheets API
+- **국제화**: next-i18next
+
+## 시작하기
+
+### 1. 의존성 설치
+
+```bash
+npm install
+```
+
+### 2. 환경변수 설정
+
+프로젝트 루트에 `.env.local` 파일을 생성하고 다음 환경변수들을 설정하세요:
+
+```env
+# Gmail 설정
+EMAIL_USER=your-gmail@gmail.com
+EMAIL_APP_PASSWORD=your-gmail-app-password
+
+# Google Sheets 설정
+GOOGLE_SHEET_ID=your-google-sheet-id
+GOOGLE_SERVICE_ACCOUNT_EMAIL=your-service-account@project.iam.gserviceaccount.com
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYour Private Key Here\n-----END PRIVATE KEY-----\n"
+```
+
+자세한 설정 방법은 [SETUP_GUIDE.md](./SETUP_GUIDE.md)를 참조하세요.
+
+### 3. 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. API 테스트
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+node test-api.js
+```
 
-## Learn More
+## 프로젝트 구조
 
-To learn more about Next.js, take a look at the following resources:
+```
+placelist-mvp/
+├── src/
+│   ├── app/
+│   │   ├── api/meeting-request/    # 미팅 신청 API
+│   │   ├── [locale]/               # 다국어 라우팅
+│   │   └── layout.tsx
+│   └── components/
+│       └── MeetingForm.tsx         # 미팅 신청 폼
+├── public/
+│   └── locales/                    # 번역 파일들
+├── SETUP_GUIDE.md                  # 설정 가이드
+└── test-api.js                     # API 테스트 스크립트
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 미팅 신청 시스템
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+사용자가 미팅 신청 폼을 제출하면:
 
-## Deploy on Vercel
+1. **데이터 검증**: 필수 필드와 이메일 형식 검증
+2. **Google Sheets 저장**: 모든 신청 데이터가 스프레드시트에 자동 저장
+3. **이메일 알림**: lia@hautrip.com으로 상세한 신청 정보가 포함된 이메일 발송
+4. **사용자 피드백**: 성공/실패 메시지 표시
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 저장되는 데이터
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 타임스탬프
+- 이름
+- 이메일
+- 회사/조직
+- 전화번호
+- 미팅 목적
+- 메시지
+
+## 배포
+
+### Vercel 배포
+
+가장 쉬운 방법은 [Vercel Platform](https://vercel.com/new)을 사용하는 것입니다:
+
+1. GitHub에 코드 푸시
+2. Vercel에서 프로젝트 연결
+3. 환경변수 설정
+4. 배포 완료
+
+### 환경변수 설정 (배포 시)
+
+Vercel 대시보드에서 다음 환경변수들을 설정하세요:
+- `EMAIL_USER`
+- `EMAIL_APP_PASSWORD`
+- `GOOGLE_SHEET_ID`
+- `GOOGLE_SERVICE_ACCOUNT_EMAIL`
+- `GOOGLE_PRIVATE_KEY`
+
+## 기여하기
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
+
+## 연락처
+
+- 이메일: lia@hautrip.com
+- 프로젝트 링크: [https://github.com/your-username/placelist-mvp](https://github.com/your-username/placelist-mvp)
