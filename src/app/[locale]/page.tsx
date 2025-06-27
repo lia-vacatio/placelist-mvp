@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { koTranslations, jaTranslations, enTranslations } from '../../locales/translations';
 import MeetingForm from '../../components/MeetingForm';
 import VideoPlayer from '../../components/VideoPlayer';
 import CreatorCarousel from '../../components/CreatorCarousel';
+import SEOStructuredData from '../../components/SEOStructuredData';
 
 const translations = {
   ko: koTranslations,
@@ -14,8 +15,8 @@ const translations = {
   en: enTranslations,
 };
 
-export default function Home({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
+export default function Home({ params }: { params: { locale: string } }) {
+  const { locale } = params;
   const t = translations[locale as keyof typeof translations] || translations.ko;
   const [showMeetingForm, setShowMeetingForm] = useState(false);
   
@@ -35,6 +36,16 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
 
   return (
     <div className="min-h-screen bg-white">
+      {/* SEO Structured Data */}
+      <SEOStructuredData locale={locale} type="organization" />
+      <SEOStructuredData locale={locale} type="webapplication" />
+      <SEOStructuredData locale={locale} type="faq" />
+      
+      {/* Skip Link for Accessibility */}
+      <a href="#main-content" className="skip-link">
+        메인 콘텐츠로 건너뛰기
+      </a>
+      
       {/* Header */}
       <header className="top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +77,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 min-h-[520px] px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section id="main-content" className="relative pt-40 pb-32 min-h-[520px] px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Images (슬라이드) */}
         <div className="absolute inset-0 z-0">
           {heroImages.map((src, idx) => (
@@ -398,7 +409,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
               height={40}
               className="h-8 w-auto mx-auto mb-4"
             />
-            <p className="text-gray-400">© 2024 PlaceList. All rights reserved.</p>
+            <p className="text-gray-400">© 2025 Vacatio Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>
