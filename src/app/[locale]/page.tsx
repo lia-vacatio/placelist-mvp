@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect, use } from "react";
 import { koTranslations, jaTranslations, enTranslations } from '../../locales/translations';
 import MeetingForm from '../../components/MeetingForm';
@@ -30,7 +31,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       setHeroIdx((prev) => (prev + 1) % heroImages.length);
     }, 3000);
     return () => clearInterval(timer);
-  }, []);
+  }, [heroImages.length]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -49,15 +50,15 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <a href="/ko" className={`px-3 py-1 rounded-md text-sm font-semibold shadow transition-colors duration-200 ${locale === 'ko' ? 'bg-[#007AFF] text-white' : 'bg-black/60 text-white hover:bg-[#007AFF]'} `}>
+                <Link href="/ko" className={`px-3 py-1 rounded-md text-sm font-semibold shadow transition-colors duration-200 ${locale === 'ko' ? 'bg-[#007AFF] text-white' : 'bg-black/60 text-white hover:bg-[#007AFF]'} `}>
                   {t.language_ko}
-                </a>
-                <a href="/ja" className={`px-3 py-1 rounded-md text-sm font-semibold shadow transition-colors duration-200 ${locale === 'ja' ? 'bg-[#007AFF] text-white' : 'bg-black/60 text-white hover:bg-[#007AFF]'} `}>
+                </Link>
+                <Link href="/ja" className={`px-3 py-1 rounded-md text-sm font-semibold shadow transition-colors duration-200 ${locale === 'ja' ? 'bg-[#007AFF] text-white' : 'bg-black/60 text-white hover:bg-[#007AFF]'} `}>
                   {t.language_ja}
-                </a>
-                <a href="/en" className={`px-3 py-1 rounded-md text-sm font-semibold shadow transition-colors duration-200 ${locale === 'en' ? 'bg-[#007AFF] text-white' : 'bg-black/60 text-white hover:bg-[#007AFF]'} `}>
+                </Link>
+                <Link href="/en" className={`px-3 py-1 rounded-md text-sm font-semibold shadow transition-colors duration-200 ${locale === 'en' ? 'bg-[#007AFF] text-white' : 'bg-black/60 text-white hover:bg-[#007AFF]'} `}>
                   {t.language_en}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -146,7 +147,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
               <span className="text-lg font-semibold text-[#007AFF]">AI가 맥락을 이해하는 추천</span>
-              <p className="text-gray-700 text-base leading-relaxed">장소 추천, 단순한 '키워드'로는 부족해요. PlaceList는 약속 목적, 시간대, 위치, 분위기까지 이해해서 당신에게 가장 좋아할만한 공간을 찾아드려요.</p>
+              <p className="text-gray-700 text-base leading-relaxed">장소 추천, 단순한 &apos;키워드&apos;로는 부족해요. PlaceList는 약속 목적, 시간대, 위치, 분위기까지 이해해서 당신에게 가장 좋아할만한 공간을 찾아드려요.</p>
             </div>
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
               <span className="text-lg font-semibold text-green-700">쓸수록, 더 나를 아는 추천</span>
@@ -154,7 +155,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             </div>
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
               <span className="text-lg font-semibold text-purple-700">감도 높은 공간만 선별</span>
-              <p className="text-gray-700 text-base leading-relaxed">예쁘기만 한 장소는 추천하지 않아요. 공간 크리에이터 큐레이션과 사용자 리뷰 데이터를 바탕으로 진짜 '좋은 경험'을 주는 공간만 골라드려요.</p>
+              <p className="text-gray-700 text-base leading-relaxed">예쁘기만 한 장소는 추천하지 않아요. 공간 크리에이터 큐레이션과 사용자 리뷰 데이터를 바탕으로 진짜 &apos;좋은 경험&apos;을 주는 공간만 골라드려요.</p>
             </div>
           </div>
         </div>

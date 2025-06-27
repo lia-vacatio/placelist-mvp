@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 import { koTranslations, jaTranslations, enTranslations } from '../locales/translations';
 import MeetingForm from './MeetingForm';
 import VideoPlayer from './VideoPlayer';
@@ -29,7 +29,7 @@ export default function ClientHome({ locale }: { locale: string }) {
       setHeroIdx((prev) => (prev + 1) % heroImages.length);
     }, 3000);
     return () => clearInterval(timer);
-  }, []);
+  }, [heroImages.length]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -88,7 +88,7 @@ export default function ClientHome({ locale }: { locale: string }) {
                 onClick={() => setShowMeetingForm(true)}
                 className="bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#0056CC] transition-colors duration-200 shadow-lg"
               >
-                {t.meeting_request}
+                {t.cta_meeting}
               </button>
             </div>
           </div>
@@ -125,10 +125,10 @@ export default function ClientHome({ locale }: { locale: string }) {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {t.innovation_desc_1}
+                {t.feature_ai_title}
               </h3>
               <p className="text-gray-600">
-                {t.innovation_desc_1_detail}
+                {t.feature_ai_desc}
               </p>
             </div>
             <div className="text-center">
@@ -138,10 +138,10 @@ export default function ClientHome({ locale }: { locale: string }) {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {t.innovation_desc_2}
+                {t.feature_context_title}
               </h3>
               <p className="text-gray-600">
-                {t.innovation_desc_2_detail}
+                {t.feature_context_desc}
               </p>
             </div>
             <div className="text-center">
@@ -151,10 +151,10 @@ export default function ClientHome({ locale }: { locale: string }) {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {t.innovation_desc_3}
+                {t.feature_simple_title}
               </h3>
               <p className="text-gray-600">
-                {t.innovation_desc_3_detail}
+                {t.feature_simple_desc}
               </p>
             </div>
           </div>
@@ -180,13 +180,13 @@ export default function ClientHome({ locale }: { locale: string }) {
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {t.gallery_cafe_modern}
+                  {t.gallery_cafe}
                 </h3>
                 <p className="text-gray-600 mb-3">
-                  {t.gallery_cafe_modern_desc}
+                  {t.gallery_cafe_desc}
                 </p>
                 <p className="text-sm text-gray-500">
-                  {t.gallery_cafe_modern_detail}
+                  {t.gallery_cafe_desc}
                 </p>
               </div>
             </div>
@@ -206,7 +206,7 @@ export default function ClientHome({ locale }: { locale: string }) {
                   {t.gallery_restaurant_desc}
                 </p>
                 <p className="text-sm text-gray-500">
-                  {t.gallery_cafe_dessert_detail}
+                  {t.gallery_restaurant_desc}
                 </p>
               </div>
             </div>
@@ -226,7 +226,7 @@ export default function ClientHome({ locale }: { locale: string }) {
                   {t.gallery_workspace_desc}
                 </p>
                 <p className="text-sm text-gray-500">
-                  {t.gallery_bar_detail}
+                  {t.gallery_workspace_desc}
                 </p>
               </div>
             </div>
@@ -269,35 +269,14 @@ export default function ClientHome({ locale }: { locale: string }) {
         </div>
       </section>
 
-      {/* VACATIO Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              {t.vacatio_vision}
-            </h2>
-            <p className="text-2xl font-light mb-8">
-              {t.vacatio_motto}
-            </p>
-            <p className="text-lg text-gray-300 mb-8">
-              {t.vacatio_desc_1}<br />
-              {t.vacatio_desc_2}
-            </p>
-            <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-              {t.vacatio_learn_more}
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {t.contact_title}
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto whitespace-pre-line">
               {t.contact_desc}
             </p>
           </div>
@@ -306,7 +285,7 @@ export default function ClientHome({ locale }: { locale: string }) {
               onClick={() => setShowMeetingForm(true)}
               className="bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#0056CC] transition-colors duration-200 shadow-lg"
             >
-              {t.meeting_request}
+              {t.cta_meeting}
             </button>
           </div>
         </div>
