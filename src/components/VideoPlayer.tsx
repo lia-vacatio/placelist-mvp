@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useRef, useEffect } from 'react';
 
@@ -126,4 +126,4 @@ export function YouTubePlayer({ videoId, title, className = '' }: YouTubePlayerP
       ></iframe>
     </div>
   );
-} 
+}

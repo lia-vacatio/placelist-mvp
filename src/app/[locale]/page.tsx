@@ -1,3 +1,5 @@
+"use client";
+
 export function generateStaticParams() {
   return [
     { locale: 'ko' },
@@ -5,8 +7,6 @@ export function generateStaticParams() {
     { locale: 'ja' }
   ];
 }
-
-'use client';
 
 import Image from "next/image";
 import Link from "next/link";
