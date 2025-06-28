@@ -15,14 +15,14 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "PlaceList - AI 기반 맞춤형 장소 추천 서비스",
-    template: "%s | PlaceList"
+    default: "placelist - AI 기반 맞춤형 장소 추천 서비스",
+    template: "%s | placelist"
   },
-  description: "AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 PlaceList. 데이트, 비즈니스 미팅, 여행 등 모든 상황에 맞는 완벽한 공간을 찾아보세요.",
+  description: "AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 placelist. 데이트, 비즈니스 미팅, 여행 등 모든 상황에 맞는 완벽한 공간을 찾아보세요.",
   keywords: ["장소 추천", "AI 추천", "데이트 장소", "비즈니스 미팅", "카페", "레스토랑", "여행", "플레이스리스트"],
-  authors: [{ name: "PlaceList Team" }],
-  creator: "PlaceList",
-  publisher: "PlaceList",
+  authors: [{ name: "placelist Team" }],
+  creator: "placelist",
+  publisher: "placelist",
   formatDetection: {
     email: false,
     address: false,
@@ -41,22 +41,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: 'https://placelist.app',
-    siteName: 'PlaceList',
-    title: 'PlaceList - AI 기반 맞춤형 장소 추천 서비스',
-    description: 'AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 PlaceList. 데이트, 비즈니스 미팅, 여행 등 모든 상황에 맞는 완벽한 공간을 찾아보세요.',
+    siteName: 'placelist',
+    title: 'placelist - AI 기반 맞춤형 장소 추천 서비스',
+    description: 'AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 placelist. 데이트, 비즈니스 미팅, 여행 등 모든 상황에 맞는 완벽한 공간을 찾아보세요.',
     images: [
       {
         url: '/images/placelist-logo.png',
         width: 1200,
         height: 630,
-        alt: 'PlaceList - AI 기반 맞춤형 장소 추천 서비스',
+        alt: 'placelist - AI 기반 맞춤형 장소 추천 서비스',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PlaceList - AI 기반 맞춤형 장소 추천 서비스',
-    description: 'AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 PlaceList',
+    title: 'placelist - AI 기반 맞춤형 장소 추천 서비스',
+    description: 'AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 placelist',
     images: ['/images/placelist-logo.png'],
     creator: '@placelist',
   },
@@ -102,7 +102,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "PlaceList",
+              "name": "placelist",
               "description": "AI 기반 맞춤형 장소 추천 서비스",
               "url": "https://placelist.app",
               "applicationCategory": "LifestyleApplication",
@@ -114,7 +114,7 @@ export default function RootLayout({
               },
               "creator": {
                 "@type": "Organization",
-                "name": "PlaceList"
+                "name": "placelist"
               }
             })
           }}

@@ -40,7 +40,7 @@ export default function ClientHome({ locale }: { locale: string }) {
             <div className="flex items-center h-16">
               <Image
                 src="/images/placelist-logo.png"
-                alt="PlaceList"
+                alt="placelist"
                 width={120}
                 height={40}
                 className="h-8 w-auto"

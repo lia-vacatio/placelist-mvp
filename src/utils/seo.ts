@@ -18,9 +18,9 @@ export function generateSEOConfig(config: SEOConfig, locale: string): Metadata {
     title: config.title,
     description: config.description,
     keywords: config.keywords,
-    authors: [{ name: 'PlaceList Team' }],
-    creator: 'PlaceList',
-    publisher: 'PlaceList',
+    authors: [{ name: 'placelist Team' }],
+    creator: 'placelist',
+    publisher: 'placelist',
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: config.url || `${baseUrl}/${locale}`,
@@ -34,7 +34,7 @@ export function generateSEOConfig(config: SEOConfig, locale: string): Metadata {
       type: config.type || 'website',
       locale: locale === 'ko' ? 'ko_KR' : locale === 'ja' ? 'ja_JP' : 'en_US',
       url: config.url || `${baseUrl}/${locale}`,
-      siteName: 'PlaceList',
+      siteName: 'placelist',
       title: config.title,
       description: config.description,
       images: [
@@ -82,7 +82,7 @@ export function generateStructuredData(type: 'organization' | 'webapplication' |
     case 'organization':
       return {
         ...baseData,
-        "name": "PlaceList",
+        "name": "placelist",
         "url": "https://placelist.app",
         "logo": "https://placelist.app/images/placelist-logo.png",
         "description": locale === 'ko' 
@@ -103,12 +103,12 @@ export function generateStructuredData(type: 'organization' | 'webapplication' |
     case 'webapplication':
       return {
         ...baseData,
-        "name": "PlaceList",
+        "name": "placelist",
         "description": locale === 'ko' 
-          ? "AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 PlaceList"
+          ? "AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 placelist"
           : locale === 'ja'
-          ? "AIが文脈を理解し、あなたに最適な場所を推薦するPlaceList"
-          : "PlaceList uses AI to understand context and recommend the perfect places for you",
+          ? "AIが文脈を理解し、あなたに最適な場所を推薦するplacelist"
+          : "placelist uses AI to understand context and recommend the perfect places for you",
         "url": "https://placelist.app",
         "applicationCategory": "LifestyleApplication",
         "operatingSystem": "iOS, Android",
@@ -119,7 +119,7 @@ export function generateStructuredData(type: 'organization' | 'webapplication' |
         },
         "creator": {
           "@type": "Organization",
-          "name": "PlaceList"
+          "name": "placelist"
         },
         "featureList": [
           "AI 기반 장소 추천",
@@ -132,8 +132,8 @@ export function generateStructuredData(type: 'organization' | 'webapplication' |
     case 'faq':
       const faqData: FAQItem[] = locale === 'ko' ? [
         {
-          question: "PlaceList는 어떤 서비스인가요?",
-          answer: "PlaceList는 AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 서비스입니다."
+          question: "placelist는 어떤 서비스인가요?",
+          answer: "placelist는 AI가 맥락을 이해하여 당신에게 가장 적합한 장소를 추천해주는 서비스입니다."
         },
         {
           question: "어떤 상황에서 사용할 수 있나요?",
@@ -145,8 +145,8 @@ export function generateStructuredData(type: 'organization' | 'webapplication' |
         }
       ] : locale === 'ja' ? [
         {
-          question: "PlaceListはどのようなサービスですか？",
-          answer: "PlaceListは、AIが文脈を理解し、あなたに最適な場所を推薦するサービスです。"
+          question: "placelistはどのようなサービスですか？",
+          answer: "placelistは、AIが文脈を理解し、あなたに最適な場所を推薦するサービスです。"
         },
         {
           question: "どのような場面で使用できますか？",
@@ -158,8 +158,8 @@ export function generateStructuredData(type: 'organization' | 'webapplication' |
         }
       ] : [
         {
-          question: "What is PlaceList?",
-          answer: "PlaceList is a service that uses AI to understand context and recommend the perfect places for you."
+          question: "What is placelist?",
+          answer: "placelist is a service that uses AI to understand context and recommend the perfect places for you."
         },
         {
           question: "When can I use it?",

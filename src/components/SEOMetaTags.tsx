@@ -42,7 +42,7 @@ export default function SEOMetaTags({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:image" content={fullImageUrl} />
-      <meta property="og:site_name" content="PlaceList" />
+      <meta property="og:site_name" content="placelist" />
       <meta property="og:locale" content={locale === 'ko' ? 'ko_KR' : locale === 'ja' ? 'ja_JP' : 'en_US'} />
       
       {/* Twitter Card */}
@@ -53,7 +53,7 @@ export default function SEOMetaTags({
       <meta name="twitter:creator" content="@placelist" />
       
       {/* 추가 메타 태그 */}
-      <meta name="author" content="PlaceList Team" />
+      <meta name="author" content="placelist Team" />
       <meta name="robots" content={noindex || nofollow ? `${noindex ? 'noindex' : ''}${noindex && nofollow ? ',' : ''}${nofollow ? 'nofollow' : ''}` : 'index,follow'} />
       <meta name="googlebot" content={noindex || nofollow ? `${noindex ? 'noindex' : ''}${noindex && nofollow ? ',' : ''}${nofollow ? 'nofollow' : ''}` : 'index,follow'} />
       
@@ -71,8 +71,8 @@ export default function SEOMetaTags({
       <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/ko`} />
       
       {/* 추가 SEO 메타 태그 */}
-      <meta name="application-name" content="PlaceList" />
-      <meta name="apple-mobile-web-app-title" content="PlaceList" />
+      <meta name="application-name" content="placelist" />
+      <meta name="apple-mobile-web-app-title" content="placelist" />
       <meta name="theme-color" content="#007AFF" />
       <meta name="msapplication-TileColor" content="#007AFF" />
       
@@ -83,7 +83,7 @@ export default function SEOMetaTags({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            "name": "PlaceList",
+            "name": "placelist",
             "description": description || "AI 기반 맞춤형 장소 추천 서비스",
             "url": fullUrl,
             "applicationCategory": "LifestyleApplication",
@@ -95,7 +95,7 @@ export default function SEOMetaTags({
             },
             "creator": {
               "@type": "Organization",
-              "name": "PlaceList"
+              "name": "placelist"
             }
           })
         }}

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: '페이지를 찾을 수 없습니다 | PlaceList',
-  description: '요청하신 페이지를 찾을 수 없습니다. PlaceList 홈페이지로 돌아가세요.',
+  title: '페이지를 찾을 수 없습니다 | placelist',
+  description: '요청하신 페이지를 찾을 수 없습니다. placelist 홈페이지로 돌아가세요.',
   robots: {
     index: false,
     follow: false,
@@ -18,7 +18,7 @@ export default function NotFound() {
         <div className="mb-8">
           <Image
             src="/images/placelist-logo.png"
-            alt="PlaceList"
+            alt="placelist"
             width={200}
             height={67}
             className="mx-auto mb-8"

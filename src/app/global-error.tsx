@@ -24,7 +24,7 @@ export default function GlobalError({
             <div className="mb-8">
               <Image
                 src="/images/placelist-logo.png"
-                alt="PlaceList"
+                alt="placelist"
                 width={200}
                 height={67}
                 className="mx-auto mb-8"

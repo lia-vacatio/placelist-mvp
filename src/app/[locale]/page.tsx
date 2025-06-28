@@ -43,7 +43,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       
       {/* Skip Link for Accessibility */}
       <a href="#main-content" className="skip-link">
-        메인 콘텐츠로 건너뛰기
+        {t.skip_to_main_content}
       </a>
       
       {/* Header */}
@@ -53,7 +53,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             <div className="flex items-center h-16">
               <Image
                 src="/images/placelist-logo.png"
-                alt="PlaceList"
+                alt="placelist"
                 width={120}
                 height={40}
                 className="h-8 w-auto"
@@ -108,7 +108,7 @@ export default function Home({ params }: { params: { locale: string } }) {
                 onClick={() => setShowMeetingForm(true)}
                 className="bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#0056CC] transition-colors duration-200 shadow-lg"
               >
-                미팅 신청하기
+                {t.meeting_apply}
               </button>
             </div>
           </div>
@@ -150,23 +150,23 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
       </section>
 
-      {/* Why PlaceList Section - Notion Style */}
+      {/* Why placelist Section - Notion Style */}
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">{t.innovation_title}</h2>
           <div className="mb-8"></div>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
-              <span className="text-lg font-semibold text-[#007AFF]">AI가 맥락을 이해하는 추천</span>
-              <p className="text-gray-700 text-base leading-relaxed">장소 추천, 단순한 &apos;키워드&apos;로는 부족해요. PlaceList는 약속 목적, 시간대, 위치, 분위기까지 이해해서 당신에게 가장 좋아할만한 공간을 찾아드려요.</p>
+              <span className="text-lg font-semibold text-[#007AFF]">{t.ai_understand_recommend}</span>
+              <p className="text-gray-700 text-base leading-relaxed">{t.ai_understand_recommend_desc}</p>
             </div>
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
-              <span className="text-lg font-semibold text-green-700">쓸수록, 더 나를 아는 추천</span>
-              <p className="text-gray-700 text-base leading-relaxed">한 번의 대화로 시작해, 점점 더 개인화돼요. 저장한 장소, 대화 이력, 선호 스타일을 학습해 당신만의 취향 큐레이터가 되어갑니다.</p>
+              <span className="text-lg font-semibold text-green-700">{t.more_personalized_recommend}</span>
+              <p className="text-gray-700 text-base leading-relaxed">{t.more_personalized_recommend_desc}</p>
             </div>
             <div className="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow">
-              <span className="text-lg font-semibold text-purple-700">감도 높은 공간만 선별</span>
-              <p className="text-gray-700 text-base leading-relaxed">예쁘기만 한 장소는 추천하지 않아요. 공간 크리에이터 큐레이션과 사용자 리뷰 데이터를 바탕으로 진짜 &apos;좋은 경험&apos;을 주는 공간만 골라드려요.</p>
+              <span className="text-lg font-semibold text-purple-700">{t.curated_spaces_only}</span>
+              <p className="text-gray-700 text-base leading-relaxed">{t.curated_spaces_only_desc}</p>
             </div>
           </div>
         </div>
@@ -223,15 +223,15 @@ export default function Home({ params }: { params: { locale: string } }) {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/modern.png"
-                  alt="모던 카페"
+                  alt={t.modern_cafe}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">🪟 모던 카페</h3>
-                <p className="text-gray-600">따뜻한 분위기와 감각적인 인테리어가 어우러진 카페<br/><span className='text-gray-400 text-sm'>: 조용한 대화, 혼자 있는 시간을 위한 공간</span></p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">🪟 {t.modern_cafe}</h3>
+                <p className="text-gray-600">{t.modern_cafe_desc}<br/><span className='text-gray-400 text-sm'>: {t.modern_cafe_detail}</span></p>
               </div>
             </div>
             {/* 2. 디저트 전문 카페 */}
@@ -239,15 +239,15 @@ export default function Home({ params }: { params: { locale: string } }) {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/dessert.png"
-                  alt="디저트 전문 카페"
+                  alt={t.dessert_cafe}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">🍰 디저트 전문 카페</h3>
-                <p className="text-gray-600">비주얼과 맛을 모두 잡은 감성 디저트 공간<br/><span className='text-gray-400 text-sm'>: 특별한 하루를 더 달콤하게 만들어줄 곳</span></p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">🍰 {t.dessert_cafe}</h3>
+                <p className="text-gray-600">{t.dessert_cafe_desc}<br/><span className='text-gray-400 text-sm'>: {t.dessert_cafe_detail}</span></p>
               </div>
             </div>
             {/* 3. 분위기 좋은 바 */}
@@ -255,15 +255,15 @@ export default function Home({ params }: { params: { locale: string } }) {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/bar.png"
-                  alt="분위기 좋은 바"
+                  alt={t.atmospheric_bar}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">🍷 분위기 좋은 바</h3>
-                <p className="text-gray-600">조도, 음악, 대화 모든 게 완벽한 저녁 공간<br/><span className='text-gray-400 text-sm'>: 데이트나 깊은 대화를 나누고 싶은 날</span></p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">🍷 {t.atmospheric_bar}</h3>
+                <p className="text-gray-600">{t.atmospheric_bar_desc}<br/><span className='text-gray-400 text-sm'>: {t.atmospheric_bar_detail}</span></p>
               </div>
             </div>
             {/* 4. 동네 맛집 */}
@@ -271,31 +271,31 @@ export default function Home({ params }: { params: { locale: string } }) {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/food.png"
-                  alt="동네 맛집"
+                  alt={t.local_restaurant}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">🍜 동네 맛집</h3>
-                <p className="text-gray-600">누구보다 잘 아는 동네 사람만 아는 진짜 맛집<br/><span className='text-gray-400 text-sm'>: 부담 없이 푸근하게 즐기고 싶은 순간에</span></p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">🍜 {t.local_restaurant}</h3>
+                <p className="text-gray-600">{t.local_restaurant_desc}<br/><span className='text-gray-400 text-sm'>: {t.local_restaurant_detail}</span></p>
               </div>
             </div>
             {/* 5. 도심 속 건축명소 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group min-w-[300px] mx-2">
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="/images/modern.png"
-                  alt="도심 속 건축명소"
+                  src="/images/arch.png"
+                  alt={t.architectural_landmark}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">🏛️ 도심 속 건축명소</h3>
-                <p className="text-gray-600">공간 자체가 영감이 되는 건축적 매력의 장소<br/><span className='text-gray-400 text-sm'>: 구경만으로도 특별해지는 도심 산책 코스</span></p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">🏛️ {t.architectural_landmark}</h3>
+                <p className="text-gray-600">{t.architectural_landmark_desc}<br/><span className='text-gray-400 text-sm'>: {t.architectural_landmark_detail}</span></p>
               </div>
             </div>
             {/* 6. 여행 명소 */}
@@ -303,15 +303,15 @@ export default function Home({ params }: { params: { locale: string } }) {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src="/images/travel.png"
-                  alt="여행 명소"
+                  alt={t.travel_destination}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">✈️ 여행 명소</h3>
-                <p className="text-gray-600">지도 없이 찾아간 그 골목, 의외로 기억에 남는 곳<br/><span className='text-gray-400 text-sm'>: 타지에서 마주한 의외의 감동을 담은 공간</span></p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">✈️ {t.travel_destination}</h3>
+                <p className="text-gray-600">{t.travel_destination_desc}<br/><span className='text-gray-400 text-sm'>: {t.travel_destination_detail}</span></p>
               </div>
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             <CreatorCarousel />
           </div>
           <div className="flex-1 order-1 md:order-2">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 whitespace-pre-line">{`감각적인 공간,\n크리에이터 AI가 직접 추천합니다`}</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 whitespace-pre-line">{t.creator_section_title}</h2>
             <p className="text-xl text-gray-700 mb-4">{t.creator_section_subheading}</p>
             <p className="text-lg text-gray-600 mb-4">{t.creator_section_paragraph1}</p>
             <p className="text-lg text-gray-600">{t.creator_section_paragraph2}</p>
@@ -335,7 +335,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               rel="noopener noreferrer"
               className="inline-block mt-6 bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#0056CC] transition-colors duration-200 shadow-lg"
             >
-              크리에이터 AI 에이전트 사용해보기
+              {t.creator_ai_agent_try}
             </a>
           </div>
         </div>
@@ -354,17 +354,17 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">VACATIO의 비전</h2>
-            <p className="text-2xl font-bold text-white mb-4 tracking-widest">MAKE LIFE A JOURNEY</p>
-            <p className="text-xl text-gray-200 mb-2">공간을 소비하는 방식을 혁신해,</p>
-            <p className="text-xl text-gray-200 mb-8">모든 삶이 여행이 되는 세상을 만듭니다.</p>
+            <h2 className="text-4xl font-bold text-white mb-4">{t.vacatio_vision_title}</h2>
+            <p className="text-2xl font-bold text-white mb-4 tracking-widest">{t.vacatio_vision_subtitle}</p>
+            <p className="text-xl text-gray-200 mb-2">{t.vacatio_vision_desc1}</p>
+            <p className="text-xl text-gray-200 mb-8">{t.vacatio_vision_desc2}</p>
             <a
               href="https://vacatio.career.greetinghr.com/ko/about"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#0056CC] transition-colors duration-200 shadow-lg"
             >
-              VACATIO 더 알아보기
+              {t.vacatio_learn_more}
             </a>
           </div>
         </div>
@@ -392,7 +392,7 @@ export default function Home({ params }: { params: { locale: string } }) {
               onClick={() => setShowMeetingForm(true)}
               className="bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#0056CC] transition-colors duration-200 shadow-lg"
             >
-              미팅 신청하기
+              {t.contact_meeting_apply}
             </button>
           </div>
         </div>
@@ -404,10 +404,10 @@ export default function Home({ params }: { params: { locale: string } }) {
           <div className="text-center">
             <Image
               src="/images/placelist-logo.png"
-              alt="PlaceList"
-              width={120}
-              height={40}
-              className="h-8 w-auto mx-auto mb-4"
+              alt="placelist"
+              width={200}
+              height={67}
+              className="mx-auto mb-8"
             />
             <p className="text-gray-400">© 2025 Vacatio Inc. All rights reserved.</p>
           </div>
