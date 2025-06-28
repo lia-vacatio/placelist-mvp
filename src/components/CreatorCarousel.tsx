@@ -12,10 +12,28 @@ const images = [
 
 export default function CreatorCarousel() {
   const [current, setCurrent] = useState(0);
+  const [imageError, setImageError] = useState(false);
   const total = images.length;
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
+  const prev = () => {
+    setCurrent((c) => (c - 1 + total) % total);
+    setImageError(false);
+  };
+  
+  const next = () => {
+    setCurrent((c) => (c + 1) % total);
+    setImageError(false);
+  };
+
+  const handleImageError = () => {
+    console.error(`Failed to load image: ${images[current]}`);
+    setImageError(true);
+  };
+
+  const handleImageLoad = () => {
+    console.log(`Successfully loaded image: ${images[current]}`);
+    setImageError(false);
+  };
 
   return (
     <div className="relative w-full max-w-xs aspect-[9/16] flex items-center justify-center rounded-2xl">
@@ -27,13 +45,22 @@ export default function CreatorCarousel() {
         &#8592;
       </button>
       <div className="w-full h-full relative">
-        <Image
-          src={images[current]}
-          alt={`크리에이터 공간 ${current + 1}`}
-          fill
-          className="object-contain"
-          priority={current === 0}
-        />
+        {imageError ? (
+          <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">
+            이미지를 불러올 수 없습니다
+          </div>
+        ) : (
+          <Image
+            src={images[current]}
+            alt={`크리에이터 공간 ${current + 1}`}
+            fill
+            className="object-contain"
+            priority={current === 0}
+            onError={handleImageError}
+            onLoad={handleImageLoad}
+            unoptimized
+          />
+        )}
       </div>
       <button
         onClick={next}
