@@ -72,7 +72,7 @@ export const koTranslations = {
   creator_section_subheading: "크리에이터의 취향을 학습한 에이전트와 대화해보세요",
   creator_section_paragraph1: "Placelist에서는 공간 크리에이터 전용 AI 에이전트를 운영하고 있어요. 감도 높은 공간을 누구보다 잘 아는 크리에이터의 취향을 AI가 학습해, 그들이 직접 큐레이션한 공간을 대화만으로 추천받을 수 있습니다.",
   creator_section_paragraph2: "각자의 취향이 담긴 에이전트를 통해 당신에게 더 잘 맞는 공간을 발견해보세요.",
-  meeting_title: "The best way to plan a meeting, placelist",
+  meeting_title: "최적의 약속잡기, placelist",
   meeting_description: "사용자들끼리 약속이 있을 때, AI가 위치, 분위기, 목적에 따라 최고의 공간을 추천해줍니다.\n중요한 사람과의 만남, 기분을 내고 싶은 날, placelist가 약속을 특별하게 만들어줍니다.",
   innovation_title: "placelist는 기존의 장소 탐색 방법을 혁신합니다",
   gallery_recommend_title: "이런 공간을 추천합니다",
